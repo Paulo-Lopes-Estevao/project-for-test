@@ -17,13 +17,28 @@ $ git clone https://github.com/herlanderbento/project-for-test
 
 # Entre na pasta
 $ cd project-for-test
-
-# Instale as dependências
-$ docker-compose up
-
-# Execute a aplicação
-$ docker start test
-
-# O servidor inciará na porta:8888
-acesse <http://localhost:8888>
 ```
+
+# run project
+
+migration table of project
+
+```javascript
+  yarn typeorm migration:run
+```
+
+## docker
+
+```bash
+$ docker-compose up -d
+```
+
+or
+
+```bash
+$ npm run dev
+```
+
+> port: 8888
+
+> swagger docs: http://localhost:8888/api-docs/
