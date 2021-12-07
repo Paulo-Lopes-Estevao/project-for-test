@@ -15,7 +15,8 @@
     "swagger-ui-express": "^4.2.0",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.41",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../error/AppError";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
+import * as Yup from "yup";
 
 interface IRequest {
   name: string;
@@ -15,6 +16,15 @@ class CreateUserUseCase {
   ) {}
 
   async execute({ name, email }: IRequest): Promise<void> {
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string().email().required(),
+    });
+
+    if (!(await schema.isValid({ name, email }))) {
+      throw new AppError("Validation fails", 400);
+    }
+
     const userAlreadyExists = await this.usersRepository.findByEmail(email);
 
     if (userAlreadyExists) {
