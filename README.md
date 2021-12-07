@@ -24,6 +24,6 @@ $ docker-compose up
 # Execute a aplicação em modo de desenvolvimento
 $ docker start test
 
-# O servidor inciará na porta:3333
+# O servidor inciará na porta:8888
 acesse <http://localhost:8888>
 ```
