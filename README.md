@@ -21,7 +21,7 @@ $ cd project-for-test
 # Instale as dependências
 $ docker-compose up
 
-# Execute a aplicação em modo de desenvolvimento
+# Execute a aplicação
 $ docker start test
 
 # O servidor inciará na porta:8888
