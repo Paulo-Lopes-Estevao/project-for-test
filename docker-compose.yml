@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  database_api-test:
+    image: postgres
+    container_name: database_api
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db_test
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app:
+    build: .
+    container_name: test
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/usr/test
+    network_mode: host
+
+volumes:
+  pgdata:
+    driver: local
