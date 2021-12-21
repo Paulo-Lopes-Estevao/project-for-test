@@ -22,6 +22,8 @@ services:
     volumes:
       - .:/usr/test
     network_mode: host
+    depends_on:
+      - database_api-test
 
 volumes:
   pgdata:
