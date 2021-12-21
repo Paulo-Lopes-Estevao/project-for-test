@@ -14,8 +14,11 @@ services:
     volumes:
       - pgdata:/data/postgres
     network_mode: host
+    
+
   app:
-    build: .
+    build:
+      context: ./
     container_name: test
     ports:
       - 8888:8888
