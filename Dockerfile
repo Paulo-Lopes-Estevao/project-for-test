@@ -4,12 +4,12 @@ RUN mkdir /usr/test
 
 WORKDIR /usr/test
 
-COPY package*.json ./
+COPY package*.json yarn.lock ./
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
 EXPOSE 8888
 
-CMD [ "npm", "run", "dev" ]
+ENTRYPOINT [ "./runserver.sh" ] 
